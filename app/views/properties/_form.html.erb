@@ -41,7 +41,19 @@
     <%= form.text_area :remarks %>
   </div>
 
+<%= form.fields_for :station do | station | %>
+  <%= station.label :route %>
+  <%= form.text_field :route %>
+
+  <%= station.label :station %>
+  <%= form.text_field :station %>
+
+  <%= station.label :walking_minutes %>
+  <%= form.text_field :walking_minutes %>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
 <% end %>
