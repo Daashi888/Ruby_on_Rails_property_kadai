@@ -8,16 +8,20 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1 or /properties/1.json
   def show
+    set_property
+    @property.stations.build
   end
 
   # GET /properties/new
   def new
     @property = Property.new
-    @property.stations.new
+    2.times{@property.stations.build}
   end
 
   # GET /properties/1/edit
   def edit
+    set_property
+    @property.stations.build
   end
 
   # POST /properties or /properties.json
